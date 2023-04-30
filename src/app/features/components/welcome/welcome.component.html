@@ -12,7 +12,9 @@
         *ngFor="let item of data"
       >
         <nz-list-item>
-          <nz-card [nzTitle]="item.title">{{ item.content }}</nz-card>
+          <nz-card [nzTitle]="item.title" class="welcome-card">
+            {{ item.content }}
+          </nz-card>
         </nz-list-item>
       </div>
     </div>
