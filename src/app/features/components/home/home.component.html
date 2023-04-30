@@ -1,0 +1,33 @@
+<div>
+  <nz-list nzGrid>
+    <div nz-row [nzGutter]="16">
+      <div
+        nz-col
+        [nzXXl]="12"
+        [nzXl]="12"
+        [nzLg]="12"
+        [nzMd]="24"
+        [nzSm]="24"
+        [nzXs]="24"
+        *ngFor="let item of cards"
+      >
+        <nz-list-item>
+          <nz-card [nzTitle]="item.title" [nzExtra]="extraTemplate">
+            {{ item.content }}
+          </nz-card>
+
+          <ng-template #extraTemplate>
+            <button
+              nz-button
+              nzType="primary"
+              [routerLink]="[item.route]"
+              [disabled]="item.route.length < 1"
+            >
+              More
+            </button>
+          </ng-template>
+        </nz-list-item>
+      </div>
+    </div>
+  </nz-list>
+</div>
