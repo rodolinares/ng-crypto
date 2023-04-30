@@ -8,9 +8,15 @@ nz-header {
   z-index: 100;
 }
 
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .title {
   color: #fff;
-  line-height: unset;
+  margin-bottom: 0;
 }
 
 nz-content {
