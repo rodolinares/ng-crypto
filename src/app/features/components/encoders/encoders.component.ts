@@ -1,3 +1,4 @@
+import { Clipboard } from '@angular/cdk/clipboard';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -5,7 +6,7 @@ import * as Base64 from 'crypto-js/enc-base64';
 import * as Hex from 'crypto-js/enc-hex';
 import * as Utf8 from 'crypto-js/enc-utf8';
 
-import { ENCODERS } from 'src/app/shared/utility/constants';
+import { ENCODERS, MESSAGES } from 'src/app/shared/utility/constants';
 
 @Component({
   selector: 'app-encoders',
@@ -13,13 +14,14 @@ import { ENCODERS } from 'src/app/shared/utility/constants';
   styleUrls: ['./encoders.component.scss']
 })
 export class EncodersComponent implements OnInit {
+  copied = MESSAGES.copied;
   encodersDescription = ENCODERS.description;
   encodersTitle = ENCODERS.title;
   input = '';
   outputBase64 = '';
   outputHex = '';
 
-  constructor(private router: Router) {}
+  constructor(private clipboard: Clipboard, private router: Router) {}
 
   ngOnInit(): void {
     const value = 'The quick brown fox jumps over the lazy dog.';
@@ -34,6 +36,10 @@ export class EncodersComponent implements OnInit {
   onChange(value: string) {
     this.outputBase64 = this.toBase64(value);
     this.outputHex = this.toHex(value);
+  }
+
+  onCopy(value: string) {
+    this.clipboard.copy(value);
   }
 
   private toBase64(value: string) {

@@ -33,6 +33,10 @@ export const HOME_CARDS = [
   }
 ];
 
+export const MESSAGES = {
+  copied: 'Copied to clipboard!'
+};
+
 export const THEME = {
   dark: 'dark',
   default: 'default'

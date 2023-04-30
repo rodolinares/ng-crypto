@@ -6,13 +6,41 @@
 ></nz-page-header>
 
 <div class="content">
-  <input
-    nz-input
-    placeholder="Input"
-    [ngModel]="input"
-    (ngModelChange)="onChange($event)"
-  />
+  <input nz-input [ngModel]="input" (ngModelChange)="onChange($event)" />
 
-  <p nz-typography><b>Base64:</b> {{ outputBase64 }}</p>
-  <p nz-typography><b>Hex:</b> {{ outputHex }}</p>
+  <nz-input-group nzSearch nzAddOnBefore="Base64" [nzAddOnAfter]="suffixBase64">
+    <input type="text" readonly nz-input [ngModel]="outputBase64" />
+  </nz-input-group>
+
+  <ng-template #suffixBase64>
+    <button
+      nz-button
+      nzType="default"
+      nzSearch
+      nz-popover
+      nzPopoverTrigger="click"
+      [nzPopoverContent]="copied"
+      (click)="onCopy(outputBase64)"
+    >
+      <span nz-icon nzType="copy"></span>
+    </button>
+  </ng-template>
+
+  <nz-input-group nzSearch nzAddOnBefore="Hex" [nzAddOnAfter]="suffixHex">
+    <input type="text" readonly nz-input [ngModel]="outputHex" />
+  </nz-input-group>
+
+  <ng-template #suffixHex>
+    <button
+      nz-button
+      nzType="default"
+      nzSearch
+      nz-popover
+      nzPopoverTrigger="click"
+      [nzPopoverContent]="copied"
+      (click)="onCopy(outputHex)"
+    >
+      <span nz-icon nzType="copy"></span>
+    </button>
+  </ng-template>
 </div>

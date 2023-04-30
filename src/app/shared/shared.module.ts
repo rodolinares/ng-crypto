@@ -11,6 +11,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 
 const icons = [ArrowLeftOutline, BulbOutline];
@@ -28,6 +29,7 @@ const icons = [ArrowLeftOutline, BulbOutline];
     NzLayoutModule,
     NzListModule,
     NzPageHeaderModule,
+    NzPopoverModule,
     NzTypographyModule
   ]
 })
