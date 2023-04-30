@@ -1,1 +1,18 @@
-<p>encoders works!</p>
+<nz-page-header
+  (nzBack)="onBack()"
+  nzBackIcon
+  [nzTitle]="encodersTitle"
+  [nzSubtitle]="encodersDescription"
+></nz-page-header>
+
+<div class="content">
+  <input
+    nz-input
+    placeholder="Input"
+    [ngModel]="input"
+    (ngModelChange)="onChange($event)"
+  />
+
+  <p nz-typography><b>Base64:</b> {{ outputBase64 }}</p>
+  <p nz-typography><b>Hex:</b> {{ outputHex }}</p>
+</div>

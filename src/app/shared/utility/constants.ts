@@ -1,27 +1,33 @@
+export const ENCODERS = {
+  description: 'Convert data from one format to another',
+  route: 'encoders',
+  title: 'Encoders'
+};
+
 export const HOME_CARDS = [
   {
-    content:
+    description:
       'Convert an input of any size into a fixed-size string of characters',
     route: 'hashing',
     title: 'Hashing'
   },
   {
-    content: 'Convert plain text into a secret code',
+    description: 'Convert plain text into a secret code',
     route: 'ciphers',
     title: 'Ciphers'
   },
   {
-    content: 'Convert data from one format to another',
-    route: 'encoders',
-    title: 'Encoders'
+    description: ENCODERS.description,
+    route: ENCODERS.route,
+    title: ENCODERS.title
   },
   {
-    content: 'Coming soon!',
+    description: 'Coming soon!',
     route: '',
     title: 'HMAC'
   },
   {
-    content: 'Coming soon!',
+    description: 'Coming soon!',
     route: '',
     title: 'PBKDF2'
   }
