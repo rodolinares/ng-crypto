@@ -6,27 +6,24 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { NzCardModule } from 'ng-zorro-antd/card';
-import { NzFormModule } from 'ng-zorro-antd/form';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
-import { NzSelectModule } from 'ng-zorro-antd/select';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { OptionsCardComponent } from './features/components/options-card/options-card.component';
+import { CoreModule } from './core/core.module';
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [AppComponent, OptionsCardComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NzCardModule,
-    NzFormModule,
-    NzSelectModule
+    CoreModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
