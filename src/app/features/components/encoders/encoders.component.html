@@ -8,6 +8,7 @@
 <div class="content">
   <input nz-input [ngModel]="input" (ngModelChange)="onChange($event)" />
 
+  <!-- Base64 -->
   <nz-input-group nzSearch nzAddOnBefore="Base64" [nzAddOnAfter]="suffixBase64">
     <input type="text" readonly nz-input [ngModel]="outputBase64" />
   </nz-input-group>
@@ -26,6 +27,7 @@
     </button>
   </ng-template>
 
+  <!-- Hex -->
   <nz-input-group nzSearch nzAddOnBefore="Hex" [nzAddOnAfter]="suffixHex">
     <input type="text" readonly nz-input [ngModel]="outputHex" />
   </nz-input-group>

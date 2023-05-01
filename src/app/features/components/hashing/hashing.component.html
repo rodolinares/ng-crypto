@@ -1,1 +1,86 @@
-<p>hashing works!</p>
+<nz-page-header
+  (nzBack)="onBack()"
+  nzBackIcon
+  [nzTitle]="hashingTitle"
+  [nzSubtitle]="hashingDescription"
+></nz-page-header>
+
+<div class="content">
+  <input nz-input [ngModel]="input" (ngModelChange)="onChange($event)" />
+
+  <!-- MD5 -->
+  <nz-input-group nzSearch nzAddOnBefore="MD5" [nzAddOnAfter]="suffixMD5">
+    <input type="text" readonly nz-input [ngModel]="outputMD5" />
+  </nz-input-group>
+
+  <ng-template #suffixMD5>
+    <button
+      nz-button
+      nzType="default"
+      nzSearch
+      nz-popover
+      nzPopoverTrigger="click"
+      [nzPopoverContent]="copied"
+      (click)="onCopy(outputMD5)"
+    >
+      <span nz-icon nzType="copy"></span>
+    </button>
+  </ng-template>
+
+  <!-- SHA1 -->
+  <nz-input-group nzSearch nzAddOnBefore="SHA1" [nzAddOnAfter]="suffixSHA1">
+    <input type="text" readonly nz-input [ngModel]="outputSHA1" />
+  </nz-input-group>
+
+  <ng-template #suffixSHA1>
+    <button
+      nz-button
+      nzType="default"
+      nzSearch
+      nz-popover
+      nzPopoverTrigger="click"
+      [nzPopoverContent]="copied"
+      (click)="onCopy(outputSHA1)"
+    >
+      <span nz-icon nzType="copy"></span>
+    </button>
+  </ng-template>
+
+  <!-- SHA256 -->
+  <nz-input-group nzSearch nzAddOnBefore="SHA256" [nzAddOnAfter]="suffixSHA256">
+    <input type="text" readonly nz-input [ngModel]="outputSHA256" />
+  </nz-input-group>
+
+  <ng-template #suffixSHA256>
+    <button
+      nz-button
+      nzType="default"
+      nzSearch
+      nz-popover
+      nzPopoverTrigger="click"
+      [nzPopoverContent]="copied"
+      (click)="onCopy(outputSHA256)"
+    >
+      <span nz-icon nzType="copy"></span>
+    </button>
+  </ng-template>
+
+  <!-- SHA512 -->
+  <nz-input-group nzSearch nzAddOnBefore="SHA512" [nzAddOnAfter]="suffixSHA512">
+    <input type="text" readonly nz-input [ngModel]="outputSHA512" />
+  </nz-input-group>
+
+  <ng-template #suffixSHA512>
+    <button
+      nz-button
+      nzType="default"
+      nzSearch
+      nz-popover
+      nzPopoverTrigger="click"
+      [nzPopoverContent]="copied"
+      (click)="onCopy(outputSHA512)"
+    >
+      <span nz-icon nzType="copy"></span>
+    </button>
+  </ng-template>
+</div>

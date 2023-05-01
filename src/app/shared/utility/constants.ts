@@ -4,12 +4,18 @@ export const ENCODERS = {
   title: 'Encoders'
 };
 
+export const HASHING = {
+  description:
+    'Convert an input of any size into a fixed-size string of characters',
+  route: 'hashing',
+  title: 'Hashing'
+};
+
 export const HOME_CARDS = [
   {
-    description:
-      'Convert an input of any size into a fixed-size string of characters',
-    route: 'hashing',
-    title: 'Hashing'
+    description: HASHING.description,
+    route: HASHING.route,
+    title: HASHING.title
   },
   {
     description: 'Convert plain text into a secret code',
